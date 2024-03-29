@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -17,7 +18,7 @@
 &kp TAB    &kp Q   &kp W   &kp E         &kp R   &kp T                                                    &kp Y     &kp U   &kp I      &kp O    &kp P     &kp BSLH
 &kp LSHFT  &kp A   &kp S   &kp D         &kp F   &kp G                                                    &kp H     &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL  &kp Z   &kp X   &kp C         &kp V   &kp B     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp N     &kp M   &kp COMMA  &kp DOT  &kp FSLH  &none
-                           &kp LG(LGUI)  &mo 2   &kp LALT  &kp SPACE               &kp RET                &kp BSPC  &mo 1   &none
+                           &kp LG(LGUI)  &mo 2   &kp LALT  &kp SPACE               &kp RET                &kp BSPC  &mo 1   &mo 3
             >;
         };
 
@@ -38,6 +39,16 @@
 &none  &none  &none  &kp EXCLAMATION  &kp EQUAL     &none                                     &none   &kp N4  &kp N5  &kp N6  &none  &none
 &none  &none  &none  &kp PLUS         &kp ASTERISK  &none  &kp LESS_THAN    &kp GREATER_THAN  &kp N0  &kp N1  &kp N2  &kp N3  &none  &none
                      &none            &none         &none  &none            &none             &none   &none   &none
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none                                  &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none                                  &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none         &none    &none           &none  &none  &none  &none  &none  &none
+                                        &none         &none         &none         &none    &bt BT_CLR_ALL  &none  &none  &none
             >;
         };
     };
